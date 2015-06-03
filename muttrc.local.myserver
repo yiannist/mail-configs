@@ -1,7 +1,0 @@
-# --- MyServer ---
-set realname    = "Yiannis Tsiouris"
-set from        = <my email>
-set sendmail    = "/usr/bin/msmtp -a MyServer"
-set pgp_autosign
-set pgp_sign_as = 0x000000000 # PGP key id
-set record      = +MyServer/Sent

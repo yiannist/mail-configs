@@ -1,4 +1,0 @@
-# --- Riseup ---
-set realname    = "Koukou"
-set from        = <my email>
-set sendmail    = "/usr/bin/msmtp -a Riseup"

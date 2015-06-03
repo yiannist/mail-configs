@@ -76,25 +76,11 @@ directory structure:
 παράδειγμα του βασικού config είναι το [muttrc](./muttrc) (και αυτό μπαίνει μέσα
 στον παραπάνω φάκελο).
 
-Το multiple account το έχω κάνει κάνοντας "αυτόματα" `source` με βάση ένα
-environment variable (στην περίπτωσή μου το var LMC). Αντιγράφω από το conf:
+Το multiple accounts το κάνει "αυτόματα" ο `msmtp`, διαβάζοντας το FROM header.
+Για περισσότερη άνεση (και σιγουριά) κάνουμε τα headers editable στον editor,
+στο `muttrc`:
 
-> source ~/.mutt/muttrc.local.$LMC
-
-Και έχω μέσα στο `~/.mutt/` Ν αρχεία (όσα και οι λογαριασμοί μου) με ονόματα
-[muttrc.local.myserver](./muttrc.local.myserver),
-[muttrc.local.riseup](./muttrc.local.riseup), etc., που έχουν account-specific
-πληροφορίες, όπως το όνομα, το from, ο SMTP που θα χρησιμοποιηθεί για αποστολή
-email κλπ.
-
-Έχω βάλει και κάποια aliases στο `~/.zshrc` για να με βολεύει σε περίπτωση που
-θέλω να στείλω email από κάποιο συγκεκριμένο λογαριασμό (το διάβασμα των emails
-προφανώς δεν έχει σχέση). Για παράδειγμα:
-
-```
-alias mutt='LMC=myserver /usr/bin/mutt'
-alias rmutt='LMC=riseup /usr/bin/mutt'
-```
+> set edit_headers = yes # edit headers in $editor
 
 Επιπλέον, μέσα στο βασικό conf πρέπει να δηλώσουμε τους φακέλους των mailboxes
 μας. Αυτό γίνεται στη γραμμή:
