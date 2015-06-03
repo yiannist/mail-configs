@@ -1,0 +1,44 @@
+[general]
+accounts = MyServer, Riseup
+
+[Account MyServer]
+localrepository = MyServerLocal
+remoterepository = MyServerRemote
+postsynchook = notmuch new
+
+[Repository MyServerLocal]
+type = Maildir
+localfolders = <mail folder> # e.g. ~/Mail/MyServer
+
+[Repository MyServerRemote]
+type = IMAP
+remotehost = <MyServer domain name>
+remoteport = <MyServer IMAP port>
+remoteuser = <user>
+remotepass = <pass>
+ssl = yes
+# Only sync the folders below:
+folderfilter = lambda folder: folder in ['INBOX',
+                                         'Sent',
+                                         'Drafts',
+                                         'Queue',
+                                         'Thrash',
+                                         'hackers-mailing-list']
+
+[Account Riseup]
+localrepository = RiseupLocal
+remoterepository = RiseupRemote
+proxy = SOCKS5:localhost:9050 # the default Tor port
+
+[Repository RiseupLocal]
+type = Maildir
+localfolders = <mail folder> # e.g. ~/Mail/Riseup
+
+[Repository RiseupRemote]
+type = IMAP
+remotehost = zsolxunfmbfuq7wf.onion # imap.riseup.net's onion address
+remoteport = 993
+remoteuser = <user>
+remotepass = <pass>
+ssl = yes
+# Sync all folders on the IMAP server

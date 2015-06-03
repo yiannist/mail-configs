@@ -1,0 +1,6 @@
+mailboxes \
+  "+MyServer -----------" "+MyServer/INBOX" "+MyServer/Trash" "+MyServer/Sent" \
+  "+MyServer/Queue" "+MyServer/Drafts" "+MyServer/hackers-mailing-list" \
+  "+Riseup -----------" "+Riseup/INBOX" "+Riseup/Trash" "+Riseup/Sent" \
+  "+Riseup/Queue" "+Riseup/Drafts" "+Riseup/Spam"
+
