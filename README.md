@@ -76,7 +76,7 @@ directory structure:
 παράδειγμα του βασικού config είναι το [muttrc](./muttrc) (και αυτό μπαίνει μέσα
 στον παραπάνω φάκελο).
 
-Το multiple accounts το κάνει "αυτόματα" ο `msmtp`, διαβάζοντας το FROM header.
+Το multiple accounts το κάνει "αυτόματα" ο mSMTP, διαβάζοντας το FROM header.
 Για περισσότερη άνεση (και σιγουριά) κάνουμε τα headers editable στον editor,
 στο `muttrc`:
 
@@ -99,6 +99,25 @@ directory structure:
 και προσέχουμε να υπάρχει στο muttrc:
 
 > source ~/.mutt/gpg.rc
+
+Σε περίπτωση που θέλουμε να απαντάμε και όταν είμαστε offline (πρακτικά, πάντα
+θα γίνονται enqueue τα νέα μηνύματα μέχρι να "αδειάσουμε" την ουρά του mSMTP)
+αλλάζουμε το `sendmail` στο `muttrc` ως εξής:
+
+> set sendmail = "/usr/local/bin/msmtp-enqueue.sh"
+
+Αφού πρώτα φροντίσουμε να αντιγράψουμε τα αντίστοιχα scripts:
+
+> $ cp /usr/share/doc/msmtp/examples/msmtpqueue/*.sh /usr/local/bin
+
+Πλέον όλα τα mail γίνονται στοιβάζονται στην ουρά του mSMTP και θα σταλούν όταν
+εκτελέσουμε:
+
+> $ /usr/local/bin/msmtp-runqueue.sh
+
+Μπορούμε να δούμε τα περιεχόμενα της ουράς εκτελώντας:
+
+> $ /usr/local/bin/msmtp-listqueue.sh
 
 ### Χρήσιμα links
 * http://stevelosh.com/blog/2012/10/the-homely-mutt/
