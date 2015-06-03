@@ -1,11 +1,14 @@
 # Email done right!
 
-Μετά από ~~αρκετό πρήξιμο~~ αρκετά επιχειρήματα του Erethon [1], είπα να
-ξαναδοκιμάσω να χρησιμοποιήσω το mutt και ένα σωρό άλλα εργαλεία για τη
+Μετά από ~~αρκετό πρήξιμο~~ αρκετά επιχειρήματα του
+[Erethon](http://blog.erethon.com/blog/2015/02/27/my-mail-setup-using-mutt-slash-offlineimap-slash-imapfilters/),
+είπα να ξαναδοκιμάσω να χρησιμοποιήσω το mutt και ένα σωρό άλλα εργαλεία για τη
 διαχείρηση του καθημερινού ~~spam~~ mail... Ο claws-mail με εξ-υπηρέτησε αρκετά
 καλά μέχρι τώρα αλλά ήρθε η ώρα να μπω στο group των l33t h4x0rs. Εντάξει, εδώ
-που τα λέμε έπαιξε και ένα ρόλο η γνώμη των Hartman [2] και Zacchiroli [3] αλλά
-σίγουρα όχι όσο του Νιόνιου! :-)
+που τα λέμε έπαιξε και ένα ρόλο η γνώμη των
+[Hartman](http://greg.kh.usesthis.com/) και
+[Zacchiroli](http://stefano.zacchiroli.usesthis.com/) αλλά σίγουρα όχι όσο του
+Νιόνιου! :-)
 
 *Υπάρχει* και *πιο απλός* τρόπος να στήσεις τον mutt με πολλούς λογαριασμούς
 email (και τα λοιπά καλούδια του!) αλλά, για λόγους που θα εξηγηθούν παρακάτω,
@@ -18,7 +21,8 @@ email (και τα λοιπά καλούδια του!) αλλά, για λόγ�
 * [mutt](#mutt): Ως απλό mail client με πολλαπλά account και PGP support.
 * [notmuch](#notmuch): Για mail indexing.
 * [tor](#tor): Για mail servers που είναι σε Tor Hidden Services (HS), όπως π.χ.
-  αυτοί της Riseup [4].
+  αυτοί της
+  [Riseup](https://help.riseup.net/en/security/network-security/tor#riseups-tor-hidden-services).
 * [unbound](#tor): Για να δρομολογούνται τα DNS requests τόσο προς το
   "κανονικό" internet όσο και προς το κρεμμυδο-internet.
 
@@ -160,9 +164,11 @@ postsynchook = notmuch new
 
 TODO
 
-> /etc/torrc
-> /etc/unbound/unbound.conf
-> /etc/ferm/ferm.conf ή /etc/rc.local
+```
+/etc/torrc
+/etc/unbound/unbound.conf
+/etc/ferm/ferm.conf ή /etc/rc.local
+```
 
 ### Links
 * https://grepular.com/Transparent_Access_to_Tor_Hidden_Services
@@ -183,9 +189,3 @@ TODO
 interaction.
 
 Αυτά ;-)
-
-[1]:
-http://blog.erethon.com/blog/2015/02/27/my-mail-setup-using-mutt-slash-offlineimap-slash-imapfilters/
-[2]: http://greg.kh.usesthis.com/
-[3]: http://stefano.zacchiroli.usesthis.com/
-[4]: https://help.riseup.net/en/security/network-security/tor#riseups-tor-hidden-services
